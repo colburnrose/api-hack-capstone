@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #16a085;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.card {
+  display: grid;
+  grid-template-areas: "image" "text" "stats";
+
+  font-family: roboto;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.bg-light {
+  border-radius: 18px;
+}
+
+.card-image {
+  grid-area: image;
+  height: 50%;
+  width: 35%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-size: cover;
+}
+
+.card-text h5 {
+  color: #ff4000;
+}
+
+.card-text {
+  grid-area: text;
+  color: grey;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.card-stats {
+  grid-area: stats;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background: #ff4000;
+}
+
+.card-stats .stat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  color: white;
+}
+
+.card-stats .type {
+  font-size: 11px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.card-stats .value {
+  font-size: 16px;
+  font-weight: 500px;
+}
+
+.card-stats .border {
+  border-left: 1px solid #ff4000;
+  border-right: 1px solid #ff4000;
+}
+
+.card-stats .value sup {
+  font-size: 12px;
+}
+
+.card-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+header h1 a,
+footer {
+  color: #ff4000;
+  padding: 0.5em 0;
+  text-decoration: none;
+}
+footer {
+  margin-top: auto;
+  position: relative;
+}
+
+h2,
+h3,
+h5,
+p,
+footer {
+  font-size: small;
+  text-align: center;
+  position: relative;
+}
+
+.btn-info {
+  display: inline-flex;
+  background-color: green;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input[type="text"] {
+  padding: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.error-message {
+  color: red;
+}
+
+.hidden {
+  display: none;
+}

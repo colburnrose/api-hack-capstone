@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Fantasy Hack</title>
+    <link rel="shortcut icon" href="#" />
+    <!-- Bootstrap CDB -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!-- Font Awesome -->
+    <!-- <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    /> -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prata&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1><a href="/">Fantasy Hack</a></h1>
+      </header>
+      <form id="js-form">
+        <label for="search-player">Select Fantasy Player:</label>
+        <select
+          class="search-player"
+          name="search-player"
+          id="js-search-player"
+          required
+        >
+          <option id="playerID" value="">Select a Player...</option>
+        </select>
+        <input type="submit" value="Search Player!" />
+      </form>
+      <p id="js-error-message"></p>
+      <section id="results" class="hidden">
+        <h2>Search results...</h2>
+        <ul id="results-list"></ul>
+      </section>
+    </main>
+    <footer>
+      <h3><a href="/">Fantasy Hack</a> &copy;2020</h3>
+      <small
+        >Site build by
+        <a href="https://colburncodes.github.io/webpage/"
+          ><strong>ColburnCodes</strong></a
+        ></small
+      >
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/bf65faf19e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <script src="js/players.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
