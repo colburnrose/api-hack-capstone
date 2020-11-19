@@ -6,13 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Fantasy Hack</title>
     <link rel="shortcut icon" href="#" />
-    <!-- Bootstrap CDB -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
+
     <!-- Font Awesome -->
     <!-- <link
       rel="stylesheet"
@@ -30,40 +24,49 @@
     />
   </head>
   <body>
+    <header>
+      <div class="logo">
+        <h1>FANTASY<span> HACK</span></h1>
+
+        <ul class="navigation">
+          <a><li>Home</li></a>
+          <a><li>Developers</li></a>
+          <a><li>Sports Data</li></a>
+          <a><li>Contact Us</li></a>
+        </ul>
+      </div>
+    </header>
     <main class="container">
-      <header>
-        <h1><a href="/">Fantasy Hack</a></h1>
-      </header>
-      <form id="js-form">
-        <label for="search-player">Select Fantasy Player:</label>
-        <select
-          class="search-player"
-          name="search-player"
-          id="js-search-player"
-          required
-        >
-          <option id="playerID" value="">Select a Player...</option>
-        </select>
-        <input type="submit" value="Search Player!" />
-      </form>
-      <p id="js-error-message"></p>
-      <section id="results" class="hidden">
-        <h2>Search results...</h2>
-        <ul id="results-list"></ul>
+      <section class="player-container">
+        <form id="js-form">
+          <label for="search-player">Select Fantasy Player:</label>
+          <select
+            class="search-player"
+            name="search-player"
+            id="js-search-player"
+            required
+          >
+            <option id="playerID" value="">Select a Player...</option>
+          </select>
+          <input type="submit" value="Draft Player" />
+        </form>
+        <p id="js-error-message"></p>
+        <section class="players"></section>
       </section>
     </main>
 
     <footer>
-      <h3><a href="/">Fantasy Hack</a> &copy;2020</h3>
-      <small
+      <h3>FANTASY <span>HACK</span> &copy;2020</h3>
+      <!-- <small
         >Site build by
         <a href="https://colburncodes.github.io/webpage/"
           ><strong>ColburnCodes</strong></a
         ></small
-      >
+      > -->
     </footer>
 
     <!-- JAVASCRIPT -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.3.1.js"
       integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -75,6 +78,8 @@
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <script src="js/fantasyscoring.js"></script>
+    <script src="js/position.js"></script>
     <script src="js/players.js"></script>
     <script src="js/app.js"></script>
   </body>
