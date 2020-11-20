@@ -138,13 +138,12 @@ h5 {
 }
 
 header {
-  width: 100%;
-  display: block;
-  height: 100px;
-  background-color: blue;
-  font-weight: bolder;
-  background-size: cover;
-  padding: 30px;
+    display: block;
+    height: 100px;
+    background-color: blue;
+    font-weight: bolder;
+    background-size: cover;
+    padding: 30px;
 }
 
 .logo h1 {
