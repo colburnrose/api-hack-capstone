@@ -93,7 +93,6 @@ function getFantasyPlayer(playerID) {
   };
 
   const url = URL + playerID;
-  console.log({ url, options });
 
   fetch(url, options)
     .then((response) => {
@@ -117,7 +116,6 @@ function getPlayerStatsBySeason(playerID, season = 2020) {
   };
 
   const url = PLAYER_SEASON_STATS_BY_ID + season + "/" + playerID;
-  console.log({ url, options });
 
   fetch(url, options)
     .then((response) => {
@@ -146,7 +144,6 @@ async function getNewsByPlayerId(playerId) {
     }),
   };
   const url = NEWS + playerId;
-  console.log(url, options);
 
   await fetch(url, options)
     .then((response) => {
@@ -240,7 +237,7 @@ function watchForm() {
 function main() {
   watchForm();
   filterPlayerByQB();
-  filterfPlayerByRB();
+  //filterfPlayerByRB();
   generatePlayerList();
 }
 
