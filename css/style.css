@@ -48,11 +48,12 @@ label {
 .card {
   font-family: roboto;
   background: white;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
   text-align: center;
   max-width: 300px;
   margin: 0 auto;
   text-align: center;
+  border-radius: 3px;
 }
 
 .card-detail {
@@ -72,6 +73,7 @@ label {
 
 .card-info {
   flex: 1;
+  padding: 5px;
 }
 
 .card-text h5 {
@@ -87,16 +89,18 @@ label {
 .card-stats {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  background: #ff4000;
+  background-color: orange;
+  display: flex;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .card-stats .stat {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 10px;
-  color: white;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    color: #000;
+    flex-direction: row;
+    margin: 0 auto;
 }
 
 .card-stats .type {
@@ -108,6 +112,7 @@ label {
 .card-stats .value {
   font-size: 16px;
   font-weight: 500px;
+  margin-top: 20px;
 }
 
 .card-stats .border {
@@ -180,6 +185,7 @@ h3 span {
   float: right;
   height: 100%;
   color: orange;
+  padding-top: 10px;
 }
 
 .navigation a {
@@ -201,6 +207,7 @@ footer {
 form {
   display: flex;
   margin-top: 15%;
+  justify-content: center;
 }
 footer {
   margin-top: 25%;
@@ -261,7 +268,7 @@ input {
 .fw-medium {
     font-weight: 600;
     float: left;
-    margin-top: 5%;
+    margin-top: 8%;
 }
 .cir-black {
   color: #000;
@@ -295,6 +302,22 @@ button:hover {
 .bar {
   background-color: orange;
 }
+.stat {
+  display: flex;
+}
 
-@media only screen and (min-width: 768px) {
+.stat p {
+  position: absolute;
+  margin-left: 7px;
+  margin-bottom: 5px;
+}
+
+.stat-info {
+  margin-top: 5px;
+}
+
+.stat-label {
+  background-color: black;
+  color: #fff;
+  border-radius: 2px;
 }

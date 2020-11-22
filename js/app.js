@@ -15,7 +15,7 @@ function checkDone() {
 
 function displayResults(player) {
   playerHTML = `
-    <div class="card" style="width: 18rem;">
+    <div class="card">
         <div class="card-detail">
            <img class="card-image" src="${
              player.PhotoUrl
@@ -38,27 +38,25 @@ function displayResults(player) {
 
 function displayStats(player) {
   statsHTML = `
-    <div class="card">
-      <div class="stat">
-      <p>Passing Rating</p>
-        <div class="value"></sup></div>
-        <div class="type">read</div>
-        </div>
-
-        <div class="stat border">
-        <p>Fantasy Points</p>
-        <div class="value">${player[0].FantasyPoints}</div>
-        </div>
-
-        <div class="stat">
-        <div class="value">455</div>
-        <div class="type">comments</div>
-
-        <div class="player-stats">
-          <div class="card-text">
-            <p class="bar-graph">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-    </div>
+  <h4 class="stat-label">2020 SEASON STATS</h4>
+    <div class="card-stats">
+          <div class="stat">
+          <p>YDS</p>
+              <div class="value">${player[0].PassingYards}</div>
+          </div>
+          <div class="stat">
+          <p>TD</p>
+            <div class="value">${player[0].PassingTouchdowns}</div>
+          </div>
+          <div class="stat">
+          <p>INT</p>
+            <div class="value">${player[0].PassingInterceptions}</div>
+          </div>
+          <div class="stat">
+          <p>QBR</p>
+            <div class="value">${player[0].PassingRating}</div>
+          </div>
+      </div>
     `;
   checkDone();
 }
@@ -123,7 +121,6 @@ function getPlayerStatsBySeason(playerID, season = 2020) {
 
   fetch(url, options)
     .then((response) => {
-      console.log("This data ", response);
       if (response.ok) {
         return response.json();
       } else {
@@ -136,7 +133,9 @@ function getPlayerStatsBySeason(playerID, season = 2020) {
       }
     })
     .catch((error) => {
-      $("#js-error-message").text(`Error making your request ${error.message}`);
+      $("#js-error-message").text(
+        `Error making your requesw1t ${error.message}`
+      );
     });
 }
 
