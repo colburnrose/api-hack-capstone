@@ -93,7 +93,6 @@ function getFantasyPlayer(playerID) {
   };
 
   const url = URL + playerID;
-  console.log({ url, options });
 
   fetch(url, options)
     .then((response) => {
@@ -117,7 +116,6 @@ function getPlayerStatsBySeason(playerID, season = 2020) {
   };
 
   const url = PLAYER_SEASON_STATS_BY_ID + season + "/" + playerID;
-  console.log({ url, options });
 
   fetch(url, options)
     .then((response) => {
@@ -139,16 +137,15 @@ function getPlayerStatsBySeason(playerID, season = 2020) {
     });
 }
 
-async function getNewsByPlayerId(playerId) {
+function getNewsByPlayerId(playerId) {
   const options = {
     headers: new Headers({
       "Ocp-Apim-Subscription-Key": apiKey,
     }),
   };
   const url = NEWS + playerId;
-  console.log(url, options);
 
-  await fetch(url, options)
+  fetch(url, options)
     .then((response) => {
       if (response.ok) {
         return response.json();
@@ -228,19 +225,16 @@ function filterfPlayerByRB() {
 function watchForm() {
   $("form").submit((e) => {
     e.preventDefault();
-    console.log("App activiated...");
     let player = $("#js-search-player").val();
-    let player2 = $("#js-search-player2").val();
     getFantasyPlayer(player);
     getPlayerStatsBySeason(player);
-    // getNewsByPlayerId(player);
   });
 }
 
 function main() {
   watchForm();
   filterPlayerByQB();
-  filterfPlayerByRB();
+  //filterfPlayerByRB();
   generatePlayerList();
 }
 
