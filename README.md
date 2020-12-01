@@ -7,4 +7,4 @@ to get the latest current stats while comparing multiple players in the fantasy 
 
 - Utlizies a custom, mobile first design.
 - Uses JQuery, native JavaScript, HTML, & CSS.
-- Access data from Sportsdata.io 
+- Access data from Sportsdata.io API
