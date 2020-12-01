@@ -1,3 +1,3 @@
-# api-hack-capstone
-https://colburnrose.github.io/api-hack-capstone/ - Live Site
+# FANTASY HACK
+- Live Site https://colburnrose.github.io/api-hack-capstone/ 
 ![](image/landing-page.png)
