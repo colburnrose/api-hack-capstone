@@ -321,3 +321,8 @@ button:hover {
   color: #fff;
   border-radius: 2px;
 }
+
+#js-error-message {
+  margin-top: 5px;
+  color: orange;
+}
