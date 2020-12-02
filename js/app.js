@@ -4,6 +4,7 @@ const apiKey = "ad749733ee9244e4b8c987ddd5597d42";
 const URL = `https://api.sportsdata.io/v3/nfl/scores/json/Player/`;
 const PLAYER_SEASON_STATS_BY_ID = `https://api.sportsdata.io/v3/nfl/stats/json/PlayerSeasonStatsByPlayerID/`;
 const NEWS = `https://api.sportsdata.io/v3/nfl/scores/json/NewsByPlayerID/`;
+const DAILY_FANTASY_PLAYERS = `https://api.sportsdata.io/v3/nfl/stats/json/DailyFantasyPlayers/`;
 let playerHTML = "";
 let statsHTML = "";
 
@@ -61,19 +62,6 @@ function displayStats(player) {
   checkDone();
 }
 
-function displayNews(player) {
-  $("#news").empty();
-  for (let i = 0; i < player.length; i++) {
-    return $("#news").append(
-      `
-     <div class="news-info">
-     <p>${player[i].Content}</p>
-     </div>
-    `
-    );
-  }
-}
-
 function addPlayer() {
   $(".players").append(`<section class="player"><section class="player-info">
           ${playerHTML}
@@ -96,13 +84,19 @@ function getFantasyPlayer(playerID) {
 
   fetch(url, options)
     .then((response) => {
-      if (response.ok) {
-        return response.json();
+      if (response.status !== 200) {
+        return Promise.reject(new error("Failed to get response"));
       } else {
-        throw new Error(response.statusText);
+        return response.json();
       }
     })
-    .then((data) => displayResults(data))
+    .then((data) => {
+      if (data.PlayerID == playerID) {
+        displayResults(data);
+      } else {
+        throw new Error("Bad request: select a QB that is not the same.");
+      }
+    })
     .catch((error) => {
       $("#js-error-message").text(`Error making your request ${error.message}`);
     });
@@ -119,43 +113,23 @@ function getPlayerStatsBySeason(playerID, season = 2020) {
 
   fetch(url, options)
     .then((response) => {
-      if (response.ok) {
-        return response.json();
+      if (response.status !== 200) {
+        throw new Error("Bad response");
       } else {
-        throw new Error(response.statusText);
+        return response.json();
       }
     })
     .then((data) => {
-      if (data) {
+      if (data.length === 0) {
+        throw new Error("Please select a QB that has some data to compare.");
+      } else {
         displayStats(data);
       }
     })
     .catch((error) => {
       $("#js-error-message").text(
-        `Error making your requesw1t ${error.message}`
+        `Error making your request: ${error.message}`
       );
-    });
-}
-
-function getNewsByPlayerId(playerId) {
-  const options = {
-    headers: new Headers({
-      "Ocp-Apim-Subscription-Key": apiKey,
-    }),
-  };
-  const url = NEWS + playerId;
-
-  fetch(url, options)
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error(response.statusText);
-      }
-    })
-    .then((data) => displayNews(data))
-    .catch((error) => {
-      $("#js-error-message").text(`Error making your request ${error.message}`);
     });
 }
 
@@ -234,7 +208,6 @@ function watchForm() {
 function main() {
   watchForm();
   filterPlayerByQB();
-  //filterfPlayerByRB();
   generatePlayerList();
 }
 
