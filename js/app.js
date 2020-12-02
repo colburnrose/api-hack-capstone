@@ -91,7 +91,7 @@ function getFantasyPlayer(playerID) {
       }
     })
     .then((data) => {
-      if (data.PlayerID == playerID) {
+      if (data) {
         displayResults(data);
       } else {
         throw new Error("Bad request: select a QB that is not the same.");
