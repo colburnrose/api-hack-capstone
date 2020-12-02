@@ -200,8 +200,11 @@ function watchForm() {
   $("form").submit((e) => {
     e.preventDefault();
     let player = $("#js-search-player").val();
+    var index = $("#js-search-player").get(0).selectedIndex;
+
     getFantasyPlayer(player);
     getPlayerStatsBySeason(player);
+    $("#js-search-player option:eq(" + index + ")").remove();
   });
 }
 
