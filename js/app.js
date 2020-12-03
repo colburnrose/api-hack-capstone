@@ -1,6 +1,5 @@
 "use strict";
 
-const apiKey = "ad749733ee9244e4b8c987ddd5597d42";
 const URL = `https://api.sportsdata.io/v3/nfl/scores/json/Player/`;
 const PLAYER_SEASON_STATS_BY_ID = `https://api.sportsdata.io/v3/nfl/stats/json/PlayerSeasonStatsByPlayerID/`;
 let playerHTML = "";
